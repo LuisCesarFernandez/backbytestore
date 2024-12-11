@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.controller;
+package com.bytestore.backbytestore.controller.productsController;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bytestore.backbytestore.model.Subcategory;
-import com.bytestore.backbytestore.service.SubcategoryService;
+import com.bytestore.backbytestore.model.products.Subcategory;
+import com.bytestore.backbytestore.service.productsService.SubcategoryService;
 
 @RestController
 @RequestMapping(path = "/subcategory")

@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.model;
+package com.bytestore.backbytestore.model.login;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,18 +10,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "Role")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_category;
-    @Column(name = "name_category")
-    private String name_category;
+    private Long id_role;
 
-    public Category() {}
+    @Column(name = "name_role")
+    private String name_role;
 
-    public Category(String name_category) {
-        this.name_category = name_category;
-    }
-    
 }

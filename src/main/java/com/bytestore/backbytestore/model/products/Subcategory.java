@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.model;
+package com.bytestore.backbytestore.model.products;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

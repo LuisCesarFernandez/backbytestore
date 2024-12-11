@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.service;
+package com.bytestore.backbytestore.service.productsService;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bytestore.backbytestore.model.Product;
-import com.bytestore.backbytestore.repository.ProductRepository;
+import com.bytestore.backbytestore.model.products.Product;
+import com.bytestore.backbytestore.repository.productsRepository.ProductRepository;
 
 @Service
 public class ProductService {

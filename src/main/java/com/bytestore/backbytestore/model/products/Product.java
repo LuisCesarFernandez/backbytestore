@@ -1,4 +1,6 @@
-package com.bytestore.backbytestore.model;
+package com.bytestore.backbytestore.model.products;
+
+import com.bytestore.backbytestore.model.login.Role;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,6 +43,10 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "id_brand")
     private Brand brand;
+
+    @ManyToOne
+    @JoinColumn(name = "id_role")
+    private Role role;
 
     public Product() {}
 

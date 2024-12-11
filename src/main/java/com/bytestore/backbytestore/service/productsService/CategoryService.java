@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.service;
+package com.bytestore.backbytestore.service.productsService;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bytestore.backbytestore.model.Category;
-import com.bytestore.backbytestore.repository.CategoryRepository;
+import com.bytestore.backbytestore.model.products.Category;
+import com.bytestore.backbytestore.repository.productsRepository.CategoryRepository;
 
 @Service
 public class CategoryService {

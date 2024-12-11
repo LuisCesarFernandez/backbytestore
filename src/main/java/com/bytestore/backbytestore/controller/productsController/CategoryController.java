@@ -1,7 +1,7 @@
-package com.bytestore.backbytestore.controller;
+package com.bytestore.backbytestore.controller.productsController;
 
-import com.bytestore.backbytestore.model.Category;
-import com.bytestore.backbytestore.service.CategoryService;
+import com.bytestore.backbytestore.model.products.Category;
+import com.bytestore.backbytestore.service.productsService.CategoryService;
 
 import java.util.List;
 import java.util.Optional;

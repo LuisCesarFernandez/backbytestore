@@ -1,9 +1,9 @@
-package com.bytestore.backbytestore.repository;
+package com.bytestore.backbytestore.repository.productsRepository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bytestore.backbytestore.model.Category;
+import com.bytestore.backbytestore.model.products.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long>{

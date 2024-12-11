@@ -1,4 +1,4 @@
-package com.bytestore.backbytestore.controller;
+package com.bytestore.backbytestore.controller.productsController;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.bytestore.backbytestore.model.Product;
-import com.bytestore.backbytestore.service.ProductService;
+import com.bytestore.backbytestore.model.products.Product;
+import com.bytestore.backbytestore.service.productsService.ProductService;
 
 @RestController
 @RequestMapping(path = "/product")
