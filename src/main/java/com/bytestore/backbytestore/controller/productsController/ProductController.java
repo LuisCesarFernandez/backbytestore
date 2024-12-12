@@ -22,24 +22,24 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/")
-    public List<Product> getAllProduct(){
+    public List<Product> listProduct(){
         return productService.getAllProducts();
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getIdProduct(@PathVariable Long Id) {
+    public Optional<Product> listIdProduct(@PathVariable Long Id) {
         return productService.getIdProduct(Id);
     }
 
     @PostMapping("/")
-    public String postProduct(@RequestBody Product product) {
-        productService.saveProduct(product);
+    public String createProduct(@RequestBody Product product) {
+        productService.postProduct(product);
         return "Product created";
     }
 
     @PutMapping("/{id}")
-    public String putProduct(@PathVariable Long id, @RequestBody Product product) {
-        productService.updateProduct(product, id);
+    public String updateProduct(@PathVariable Long id, @RequestBody Product product) {
+        productService.putProduct(product, id);
         return "Product updated";
     }
 }

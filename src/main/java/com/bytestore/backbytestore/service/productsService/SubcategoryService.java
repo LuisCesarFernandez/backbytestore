@@ -22,11 +22,11 @@ public class SubcategoryService {
         return subcategoryRepository.findById(id);
     }
 
-    public Subcategory saveSubcategory(Subcategory subcategory) {
+    public Subcategory postSubcategory(Subcategory subcategory) {
         return subcategoryRepository.save(subcategory);
     }
 
-    public Subcategory updateSubcategory(Subcategory subcategory, Long id) {
+    public Subcategory putSubcategory(Subcategory subcategory, Long id) {
         subcategory.setId_subcategory(id);
         return subcategoryRepository.save(subcategory);
     }

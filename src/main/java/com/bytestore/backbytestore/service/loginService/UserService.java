@@ -27,7 +27,7 @@ public class UserService {
         return "User created";
     }
 
-    public String updateUser(User user, Long id) {
+    public String putUser(User user, Long id) {
         user.setId_user(id);
         userRepository.save(user);
         return "user updated";

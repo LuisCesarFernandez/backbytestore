@@ -22,24 +22,24 @@ public class SubcategoryController {
     private SubcategoryService subcategoryService;
 
     @GetMapping("/")
-    public List<Subcategory> getAllSubcategories() {
+    public List<Subcategory> listSubcategories() {
         return subcategoryService.getAllSubcategories();
     }
 
     @GetMapping("/{id}")
-    public Optional<Subcategory> getIdSubcategory(@PathVariable Long Id) {
+    public Optional<Subcategory> ListIdSubcategory(@PathVariable Long Id) {
         return subcategoryService.getIdSubcategory(Id);
     }
 
     @PostMapping("/")
-    public String postSubcategory(@RequestBody Subcategory subcategory){
-        subcategoryService.saveSubcategory(subcategory);
+    public String createSubcategory(@RequestBody Subcategory subcategory){
+        subcategoryService.postSubcategory(subcategory);
         return "Subcategory created";
     }
 
     @PutMapping("/{id}")
-    public String putSubcategory(@PathVariable Long id, @RequestBody Subcategory subcategory) {
-        subcategoryService.updateSubcategory(subcategory, id);
+    public String updateSubcategory(@PathVariable Long id, @RequestBody Subcategory subcategory) {
+        subcategoryService.putSubcategory(subcategory, id);
         return "Subcategory updated";
     }
 

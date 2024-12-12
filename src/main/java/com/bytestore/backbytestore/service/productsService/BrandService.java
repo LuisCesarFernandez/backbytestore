@@ -20,15 +20,15 @@ public class BrandService {
         return brandRepository.findAll();
     }
 
-    public Optional<Brand> getBrandById(Long id) {
+    public Optional<Brand> getIdBrand(Long id) {
         return brandRepository.findById(id);
     }
 
-    public void saveBrand(Brand brand) {
+    public void postBrand(Brand brand) {
         brandRepository.save(brand);
     }
 
-    public void updateBrand(Brand brand, Long id) {
+    public void putBrand(Brand brand, Long id) {
         brand.setId_brand(id);
         brandRepository.save(brand);
     }

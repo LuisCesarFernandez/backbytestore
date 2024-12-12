@@ -24,24 +24,24 @@ public class BrandController {
     private BrandService brandService;
 
     @GetMapping("/")
-    public List<Brand> getBrand() {
+    public List<Brand> listBrand() {
         return brandService.getAllBrands();
     }
 
     @GetMapping("/{id}")
-    public Optional<Brand> getBrandById(@PathVariable("id") Long id) {
-        return brandService.getBrandById(id);
+    public Optional<Brand> listIdBrand(@PathVariable("id") Long id) {
+        return brandService.getIdBrand(id);
     }
 
     @PostMapping("/")
-    public String postBrand(@RequestBody Brand brand) {
-        brandService.saveBrand(brand);
+    public String createBrand(@RequestBody Brand brand) {
+        brandService.postBrand(brand);
         return "Brand created";
     }
 
     @PutMapping("/{id}")
-    public String putBrand(@PathVariable Long id, @RequestBody Brand brand) {
-        brandService.updateBrand(brand, id);
+    public String updateBrand(@PathVariable Long id, @RequestBody Brand brand) {
+        brandService.putBrand(brand, id);
         return "Brand updated";
     }
     

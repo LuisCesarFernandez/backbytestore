@@ -22,11 +22,11 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public void saveProduct(Product product) {
+    public void postProduct(Product product) {
         productRepository.save(product);
     }
 
-    public void updateProduct(Product product, Long id) {
+    public void putProduct(Product product, Long id) {
         product.setId_product(id);
         productRepository.save(product);
     }

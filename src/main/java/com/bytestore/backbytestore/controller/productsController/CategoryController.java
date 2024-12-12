@@ -23,24 +23,24 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/")
-    public List<Category> getCategories() {
+    public List<Category> listCategories() {
         return categoryService.getAllCategories();
     }
 
     @GetMapping("/{id}")
-    public Optional<Category> getCategoryById(@PathVariable("id") Long id) {
+    public Optional<Category> listIdCategory(@PathVariable("id") Long id) {
         return categoryService.getIdCategory(id);
     }
 
     @PostMapping("/")
-    public String postCategory(@RequestBody Category category) {
-        categoryService.saveCategory(category);
+    public String createCategory(@RequestBody Category category) {
+        categoryService.postCategory(category);
         return "Category created";
     }
 
     @PutMapping("/{id}")
-    public String putCategory(@PathVariable Long id, @RequestBody Category category) {
-        categoryService.updateCategory(category, id);
+    public String updateCategory(@PathVariable Long id, @RequestBody Category category) {
+        categoryService.putCategory(category, id);
         return "Category updated";
     }
     
