@@ -1,6 +1,6 @@
 package com.bytestore.backbytestore.model.sales;
 
-import com.bytestore.backbytestore.model.login.User;
+import com.bytestore.backbytestore.model.login.UserEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +32,6 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "id_user")
-    private User user;
+    private UserEntity userEntity;
 
 }

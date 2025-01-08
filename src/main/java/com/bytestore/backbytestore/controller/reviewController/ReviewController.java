@@ -35,13 +35,15 @@ public class ReviewController {
     }
 
     @PostMapping("/")
-    public void postMethodName(@RequestBody Review review) {  
+    public String createReview(@RequestBody Review review) {  
         reviewService.postReview(review);
+        return "review created";
     }
     
     @PutMapping("/{id}")
-    public void updateReview(@PathVariable Long id, @RequestBody Review review) {
+    public String updateReview(@PathVariable Long id, @RequestBody Review review) {
         reviewService.putReview(id, review);
+        return "review updated";
     }
     
     

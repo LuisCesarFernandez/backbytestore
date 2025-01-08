@@ -34,13 +34,15 @@ public class OrderController {
     }
     
     @PostMapping("/")
-    public void createOrder(@RequestBody Order order) {
+    public String createOrder(@RequestBody Order order) {
         orderService.postOrder(order);
+        return "order created";
     }
     
     @PutMapping("/{id}")
-    public void updateOrder(@PathVariable Long id, @RequestBody Order order) {
+    public String updateOrder(@PathVariable Long id, @RequestBody Order order) {
         orderService.putOrder(id, order);
+        return "order updated";
     }
     
 }

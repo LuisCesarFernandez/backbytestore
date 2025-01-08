@@ -1,6 +1,6 @@
 package com.bytestore.backbytestore.model.review;
 
-import com.bytestore.backbytestore.model.login.User;
+import com.bytestore.backbytestore.model.login.UserEntity;
 import com.bytestore.backbytestore.model.products.Product;
 
 import jakarta.persistence.Column;
@@ -34,5 +34,5 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "id_user")
-    private User user;
+    private UserEntity userEntity;
 }

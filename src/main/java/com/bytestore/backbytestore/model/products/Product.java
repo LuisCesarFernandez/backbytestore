@@ -44,10 +44,6 @@ public class Product {
     @JoinColumn(name = "id_brand")
     private Brand brand;
 
-    @ManyToOne
-    @JoinColumn(name = "id_role")
-    private Role role;
-
     public Product() {}
 
     public Product(String name_product, String description, Double price, String url_image, Boolean available) {
