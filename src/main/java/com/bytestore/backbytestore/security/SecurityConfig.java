@@ -1,6 +1,7 @@
 package com.bytestore.backbytestore.security;
 
 import com.bytestore.backbytestore.security.Filters.JwtAuthenticationFilter;
+import com.bytestore.backbytestore.security.Filters.JwtAuthorizationFilter;
 import com.bytestore.backbytestore.security.jwt.JwtUtils;
 import com.bytestore.backbytestore.service.loginService.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +11,18 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Autowired
@@ -27,6 +30,9 @@ public class SecurityConfig {
 
     @Autowired
     JwtUtils jwtUtils;
+
+    @Autowired
+    JwtAuthorizationFilter jwtAuthorizationFilter;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http,
@@ -39,15 +45,10 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login").permitAll()
-//                        .requestMatchers("/error").permitAll()
-//                        .requestMatchers("/").permitAll()
-                        .requestMatchers("/product/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/user/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/user/**").hasRole("ADMIN")
-                        .requestMatchers("/brand/**").hasRole("USER")
                         .anyRequest().authenticated()
                 )
-                .addFilter(jwtAuthenticationFilter);
+                .addFilter(jwtAuthenticationFilter)
+                .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

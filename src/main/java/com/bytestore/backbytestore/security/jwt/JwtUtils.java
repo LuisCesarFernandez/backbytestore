@@ -39,7 +39,7 @@ public class JwtUtils {
             Jwts.parserBuilder()
                     .setSigningKey(getSignatureKey())
                     .build()
-                    .parseClaimsJwt(token)
+                    .parseClaimsJws(token)
                     .getBody();
             return true;
         }
@@ -65,7 +65,7 @@ public class JwtUtils {
         return Jwts.parserBuilder()
                 .setSigningKey(getSignatureKey())
                 .build()
-                .parseClaimsJwt(token)
+                .parseClaimsJws(token)
                 .getBody();
     }
 
